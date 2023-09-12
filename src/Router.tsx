@@ -5,6 +5,7 @@ import Home from "./screens/Home";
 import User from "./screens/users/User";
 import NotFound from "./screens/NotFound";
 import ErrorComponent from "./components/ErrorComponent";
+import Followers from "./screens/users/Followers";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: "users/:userId",
         element: <User />,
+        children: [{ path: "Followers", element: <Followers /> }],
       },
     ],
     errorElement: <NotFound />,
